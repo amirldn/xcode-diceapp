@@ -15,7 +15,6 @@
 		E95456AE25D54FD600ED28BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95456AC25D54FD600ED28BB /* LaunchScreen.storyboard */; };
 		E95456B925D54FD600ED28BB /* diceappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95456B825D54FD600ED28BB /* diceappTests.swift */; };
 		E95456C425D54FD600ED28BB /* diceappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95456C325D54FD600ED28BB /* diceappUITests.swift */; };
-		E95456E125D570DC00ED28BB /* Payload in Resources */ = {isa = PBXBuildFile; fileRef = E95456E025D570DC00ED28BB /* Payload */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +49,6 @@
 		E95456BF25D54FD600ED28BB /* diceappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = diceappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95456C325D54FD600ED28BB /* diceappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diceappUITests.swift; sourceTree = "<group>"; };
 		E95456C525D54FD600ED28BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E95456E025D570DC00ED28BB /* Payload */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Payload; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +106,6 @@
 				E95456AA25D54FD600ED28BB /* Assets.xcassets */,
 				E95456AC25D54FD600ED28BB /* LaunchScreen.storyboard */,
 				E95456AF25D54FD600ED28BB /* Info.plist */,
-				E95456E025D570DC00ED28BB /* Payload */,
 			);
 			path = diceapp;
 			sourceTree = "<group>";
@@ -235,7 +232,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E95456AE25D54FD600ED28BB /* LaunchScreen.storyboard in Resources */,
-				E95456E125D570DC00ED28BB /* Payload in Resources */,
 				E95456AB25D54FD600ED28BB /* Assets.xcassets in Resources */,
 				E95456A925D54FD300ED28BB /* Main.storyboard in Resources */,
 			);

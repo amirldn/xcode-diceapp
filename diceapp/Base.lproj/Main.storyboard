@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,8 +19,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amir's Dice App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6J-nX-kRk">
-                                <rect key="frame" x="113.5" y="99" width="187" height="30"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <rect key="frame" x="77" y="99" width="260" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -30,9 +31,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCo-bo-gY7">
-                                <rect key="frame" x="183" y="472" width="48" height="35"/>
+                                <rect key="frame" x="157.5" y="472" width="99" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Reroll"/>
+                                <state key="normal" title="Click to Roll"/>
                                 <connections>
                                     <action selector="onReroll" destination="BYZ-38-t0r" eventType="touchDown" id="WmV-69-6uN"/>
                                 </connections>
@@ -55,25 +56,33 @@
                                     <action selector="stepperValueChanges:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ziv-S0-LtC"/>
                                 </connections>
                             </stepper>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="SS9-hP-ZFg" userLabel="floatingArrow">
+                                <rect key="frame" x="132.5" y="480" width="16.5" height="19"/>
+                                <imageReference key="image" image="arrow.right" catalog="system" symbolScale="small"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="lCo-bo-gY7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EDk-Go-nnx"/>
-                            <constraint firstItem="ZfZ-n7-0Nz" firstAttribute="leading" secondItem="wc2-SJ-xQe" secondAttribute="trailing" constant="6" id="FuQ-86-ACo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ASr-RO-vzT" secondAttribute="trailing" constant="20" id="JoF-Mj-K6F"/>
-                            <constraint firstItem="X6J-nX-kRk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JxE-HO-URG"/>
-                            <constraint firstItem="VaH-Qh-z24" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KWb-31-P1k"/>
-                            <constraint firstItem="lCo-bo-gY7" firstAttribute="top" secondItem="VaH-Qh-z24" secondAttribute="bottom" constant="22" id="PwF-Mn-lCa"/>
-                            <constraint firstItem="VaH-Qh-z24" firstAttribute="top" secondItem="X6J-nX-kRk" secondAttribute="bottom" constant="244" id="Rbu-ea-YiC"/>
-                            <constraint firstItem="wc2-SJ-xQe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="S5T-Id-XZg"/>
-                            <constraint firstItem="X6J-nX-kRk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="Wdg-te-QIv"/>
-                            <constraint firstItem="wc2-SJ-xQe" firstAttribute="top" secondItem="X6J-nX-kRk" secondAttribute="bottom" constant="404" id="cGW-RX-e0A"/>
-                            <constraint firstItem="ZfZ-n7-0Nz" firstAttribute="top" secondItem="X6J-nX-kRk" secondAttribute="bottom" constant="404" id="i9a-WE-rjN"/>
-                            <constraint firstItem="ASr-RO-vzT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="489" id="oaJ-qs-H1D"/>
+                            <constraint firstItem="ASr-RO-vzT" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="7xm-zC-ZcT"/>
+                            <constraint firstItem="ASr-RO-vzT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="489" id="CDW-V9-f41"/>
+                            <constraint firstItem="ZfZ-n7-0Nz" firstAttribute="top" secondItem="ASr-RO-vzT" secondAttribute="top" id="JjU-8S-GSi"/>
+                            <constraint firstItem="SS9-hP-ZFg" firstAttribute="centerY" secondItem="lCo-bo-gY7" secondAttribute="centerY" id="Mbm-qx-YZZ"/>
+                            <constraint firstItem="X6J-nX-kRk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Psa-bA-1M4"/>
+                            <constraint firstItem="wc2-SJ-xQe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QLj-oZ-j0Q"/>
+                            <constraint firstItem="lCo-bo-gY7" firstAttribute="leading" secondItem="SS9-hP-ZFg" secondAttribute="trailing" constant="8.5" id="Qv4-D5-uMA"/>
+                            <constraint firstItem="VaH-Qh-z24" firstAttribute="centerX" secondItem="lCo-bo-gY7" secondAttribute="centerX" id="UWe-qc-DXY"/>
+                            <constraint firstItem="X6J-nX-kRk" firstAttribute="centerX" secondItem="VaH-Qh-z24" secondAttribute="centerX" id="aEl-6X-e4X"/>
+                            <constraint firstItem="SS9-hP-ZFg" firstAttribute="top" secondItem="VaH-Qh-z24" secondAttribute="bottom" constant="26" id="cAk-Wb-7Wq"/>
+                            <constraint firstItem="X6J-nX-kRk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="dL6-3Y-T26"/>
+                            <constraint firstItem="lCo-bo-gY7" firstAttribute="top" secondItem="VaH-Qh-z24" secondAttribute="bottom" constant="22" id="jAT-56-OQk"/>
+                            <constraint firstItem="wc2-SJ-xQe" firstAttribute="baseline" secondItem="ZfZ-n7-0Nz" secondAttribute="baseline" id="jMh-T6-atE"/>
+                            <constraint firstItem="ZfZ-n7-0Nz" firstAttribute="leading" secondItem="wc2-SJ-xQe" secondAttribute="trailing" constant="6" id="mJ4-CQ-KU1"/>
+                            <constraint firstItem="ZfZ-n7-0Nz" firstAttribute="top" secondItem="VaH-Qh-z24" secondAttribute="bottom" constant="83" id="pki-qQ-FLF"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="floatingArrow" destination="SS9-hP-ZFg" id="mre-hf-ajR"/>
                         <outlet property="maxNumberLabel" destination="ZfZ-n7-0Nz" id="Jrl-Qf-SmR"/>
                         <outlet property="outputNumberLabel" destination="VaH-Qh-z24" id="Jjp-aK-o8U"/>
                         <outlet property="rerollButton" destination="lCo-bo-gY7" id="g4Z-pC-sKg"/>
@@ -87,6 +96,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.right" catalog="system" width="128" height="98"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

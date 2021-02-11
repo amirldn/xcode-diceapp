@@ -25,6 +25,17 @@ class ViewController: UIViewController {
 //            userTitle.text = "\(users)+Dice App"
 //        }
         
+//        Animation
+        fade.fromValue = 1
+        fade.toValue = 0
+        hover.isAdditive = true
+        hover.fromValue = NSValue(cgPoint: CGPoint.zero)
+        hover.toValue = NSValue(cgPoint: CGPoint(x: -3.0, y: 0.0))
+        hover.autoreverses = true
+        hover.duration = 0.5
+        hover.repeatCount = Float.infinity
+        floatingArrow.layer.add(hover, forKey: "myHoverAnimation")
+        
     }
     
 // Outlets
@@ -32,37 +43,37 @@ class ViewController: UIViewController {
     @IBOutlet weak var maxNumberLabel:UILabel?
     @IBOutlet weak var userTitle: UILabel!
     @IBOutlet weak var stepper:UIStepper?
-//    @IBOutlet weak var floatingArrow: UIImageView!
+    @IBOutlet weak var floatingArrow: UIImageView!
     @IBOutlet weak var rerollButton: UIButton!
     //    @IBOutlet weak var historyView: UIScrollView!
     
 // Internal Variables
     var outputNumberInt = 0
     var maxNumberInt = 6
+    var firstRoll = true
     
     
 // Constants
     let uuid = UIDevice.current.identifierForVendor?.uuidString
     let mediumHaptic = UIImpactFeedbackGenerator(style: .medium)
     let softHaptic = UIImpactFeedbackGenerator(style: .soft)
-//    let hover = CABasicAnimation(keyPath: "position")
+    
     
 // Animation
-//    hover.isAdditive = true
-//    hover.fromValue = NSValue(cgPoint: CGPoint.zero)
-//    hover.toValue = NSValue(cgPoint: CGPoint(x: 0.0, y: 100.0))
-//    hover.autoreverses = true
-//    hover.duration = 2
-//    hover.repeatCount = Float.infinity
+    var fade = CABasicAnimation(keyPath: "opacity")
+    let hover = CABasicAnimation(keyPath: "position")
     
     
     
 // Actions
     @IBAction func onReroll(){
+        if firstRoll == true{
+            firstRollChange()
+        }
         outputNumberInt = Int.random(in: 1..<maxNumberInt+1)
         print(String(outputNumberInt))
         outputNumberLabel?.text = String(outputNumberInt)
-        rerollButton.setTitle("Reroll", for: .normal)
+
         mediumHaptic.impactOccurred()
 //        addToHistory(currentVal: outputNumberInt)
     }
@@ -83,5 +94,13 @@ class ViewController: UIViewController {
 //        historyView.addSubview(label)
 //        print("\(currentVal) added to history")
 //    }
+    
+    func firstRollChange(){
+        firstRoll = false
+        rerollButton.setTitle("Reroll", for: .normal)
+//        floatingArrow.image?.setValue(Any? nil, forKey: String)
+        floatingArrow.isHidden = true
+        print (floatingArrow.isHidden)
+    }
 }
 
