@@ -1,24 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="diceapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amir's Dice App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6J-nX-kRk">
+                                <rect key="frame" x="113.5" y="99" width="187" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaH-Qh-z24">
+                                <rect key="frame" x="185" y="373" width="44" height="76.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="64"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCo-bo-gY7">
+                                <rect key="frame" x="183" y="471.5" width="48" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Reroll"/>
+                                <connections>
+                                    <action selector="onReroll" destination="BYZ-38-t0r" eventType="touchDown" id="yMC-C3-ypx"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max Number: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wc2-SJ-xQe">
+                                <rect key="frame" x="20" y="533" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfZ-n7-0Nz">
+                                <rect key="frame" x="133" y="533" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ASr-RO-vzT" userLabel="maxNumberStepper">
+                                <rect key="frame" x="300" y="533" width="94" height="32"/>
+                                <connections>
+                                    <action selector="stepperValueChanges:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ziv-S0-LtC"/>
+                                </connections>
+                            </stepper>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lCo-bo-gY7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="EDk-Go-nnx"/>
+                            <constraint firstItem="ZfZ-n7-0Nz" firstAttribute="leading" secondItem="wc2-SJ-xQe" secondAttribute="trailing" constant="6" id="FuQ-86-ACo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ASr-RO-vzT" secondAttribute="trailing" constant="20" id="JoF-Mj-K6F"/>
+                            <constraint firstItem="X6J-nX-kRk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JxE-HO-URG"/>
+                            <constraint firstItem="VaH-Qh-z24" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KWb-31-P1k"/>
+                            <constraint firstItem="lCo-bo-gY7" firstAttribute="top" secondItem="VaH-Qh-z24" secondAttribute="bottom" constant="22" id="PwF-Mn-lCa"/>
+                            <constraint firstItem="VaH-Qh-z24" firstAttribute="top" secondItem="X6J-nX-kRk" secondAttribute="bottom" constant="244" id="Rbu-ea-YiC"/>
+                            <constraint firstItem="wc2-SJ-xQe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="S5T-Id-XZg"/>
+                            <constraint firstItem="X6J-nX-kRk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="Wdg-te-QIv"/>
+                            <constraint firstItem="wc2-SJ-xQe" firstAttribute="top" secondItem="X6J-nX-kRk" secondAttribute="bottom" constant="404" id="cGW-RX-e0A"/>
+                            <constraint firstItem="ZfZ-n7-0Nz" firstAttribute="top" secondItem="X6J-nX-kRk" secondAttribute="bottom" constant="404" id="i9a-WE-rjN"/>
+                            <constraint firstItem="ASr-RO-vzT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="489" id="oaJ-qs-H1D"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="maxNumberLabel" destination="ZfZ-n7-0Nz" id="Jrl-Qf-SmR"/>
+                        <outlet property="outputNumberLabel" destination="VaH-Qh-z24" id="Jjp-aK-o8U"/>
+                        <outlet property="stepper" destination="ASr-RO-vzT" id="Bla-N9-iH2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="121.73913043478262" y="118.52678571428571"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
