@@ -16,8 +16,6 @@ class ViewController: UIViewController {
         stepper?.value = 6
         outputNumberLabel?.text = "Roll!"
         rerollButton.setTitle("Click to roll!", for: .normal)
-//        floatingArrow.animaton(.spring())
-        print(String(uuid!))
 //        if uuid == "226B63ED-5727-43E2-B0FE-47CDA496FE1D" {
 //            userTitle.text = "Amir's Dice App"
 //        }
@@ -26,15 +24,23 @@ class ViewController: UIViewController {
 //        }
         
 //        Animation
-        fade.fromValue = 1
-        fade.toValue = 0
         hover.isAdditive = true
         hover.fromValue = NSValue(cgPoint: CGPoint.zero)
         hover.toValue = NSValue(cgPoint: CGPoint(x: -3.0, y: 0.0))
         hover.autoreverses = true
         hover.duration = 0.5
         hover.repeatCount = Float.infinity
+        
         floatingArrow.layer.add(hover, forKey: "myHoverAnimation")
+        
+        shake.isAdditive = true
+        shake.fromValue = NSValue(cgPoint: CGPoint.zero)
+        shake.toValue = NSValue(cgPoint: CGPoint(x: 0.0, y: 2.0))
+        shake.autoreverses = true
+        shake.duration = 0.1
+        shake.repeatCount = 3
+        
+        
         
     }
     
@@ -60,8 +66,8 @@ class ViewController: UIViewController {
     
     
 // Animation
-    var fade = CABasicAnimation(keyPath: "opacity")
     let hover = CABasicAnimation(keyPath: "position")
+    let shake = CABasicAnimation(keyPath: "position")
     
     
     
@@ -72,10 +78,17 @@ class ViewController: UIViewController {
         }
         outputNumberInt = Int.random(in: 1..<maxNumberInt+1)
         print(String(outputNumberInt))
+//        outputNumberLabel.layer.add(hover, forKey: "myHoverAnimation")
+//        UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseOut], animations: {
+//            outputNumberLabel
+//              self.view.layoutIfNeeded()
+//        }, completion: nil)
+        
+        
         outputNumberLabel?.text = String(outputNumberInt)
-
+        
+        
         mediumHaptic.impactOccurred()
-//        addToHistory(currentVal: outputNumberInt)
     }
     
     @IBAction func stepperValueChanges(_ sender:UIStepper){
@@ -98,9 +111,7 @@ class ViewController: UIViewController {
     func firstRollChange(){
         firstRoll = false
         rerollButton.setTitle("Reroll", for: .normal)
-//        floatingArrow.image?.setValue(Any? nil, forKey: String)
-        floatingArrow.isHidden = true
-        print (floatingArrow.isHidden)
+//        floatingArrow.isHidden = true
     }
 }
 
