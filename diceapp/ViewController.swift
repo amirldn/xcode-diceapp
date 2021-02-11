@@ -26,19 +26,14 @@ class ViewController: UIViewController {
 //        Animation
         hover.isAdditive = true
         hover.fromValue = NSValue(cgPoint: CGPoint.zero)
-        hover.toValue = NSValue(cgPoint: CGPoint(x: -3.0, y: 0.0))
+        hover.toValue = NSValue(cgPoint: CGPoint(x: -5.0, y: 0.0))
         hover.autoreverses = true
         hover.duration = 0.5
         hover.repeatCount = Float.infinity
         
         floatingArrow.layer.add(hover, forKey: "myHoverAnimation")
         
-        shake.isAdditive = true
-        shake.fromValue = NSValue(cgPoint: CGPoint.zero)
-        shake.toValue = NSValue(cgPoint: CGPoint(x: 0.0, y: 2.0))
-        shake.autoreverses = true
-        shake.duration = 0.1
-        shake.repeatCount = 3
+
         
         
         
@@ -51,7 +46,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var stepper:UIStepper?
     @IBOutlet weak var floatingArrow: UIImageView!
     @IBOutlet weak var rerollButton: UIButton!
-    //    @IBOutlet weak var historyView: UIScrollView!
+    @IBOutlet weak var RollOutputView: UIView!
     
 // Internal Variables
     var outputNumberInt = 0
@@ -77,41 +72,44 @@ class ViewController: UIViewController {
             firstRollChange()
         }
         outputNumberInt = Int.random(in: 1..<maxNumberInt+1)
-        print(String(outputNumberInt))
-//        outputNumberLabel.layer.add(hover, forKey: "myHoverAnimation")
-//        UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseOut], animations: {
-//            outputNumberLabel
-//              self.view.layoutIfNeeded()
-//        }, completion: nil)
+        CATransaction.begin()
+        CATransaction.setCompletionBlock({
+            self.outputNumberLabel?.text = String(self.outputNumberInt)
+            self.mediumHaptic.impactOccurred()
+        })
+        shakeView(view: RollOutputView)
+        CATransaction.commit()
         
         
-        outputNumberLabel?.text = String(outputNumberInt)
+//        outputNumberLabel?.text = String(outputNumberInt)
         
         
-        mediumHaptic.impactOccurred()
+        
     }
     
     @IBAction func stepperValueChanges(_ sender:UIStepper){
         print("Stepper Value: \(sender.value)")
         maxNumberInt = Int(sender.value)
-        print(String(maxNumberInt))
         maxNumberLabel?.text = String(maxNumberInt)
         softHaptic.impactOccurred()
     }
     
-//    @IBAction func addToHistory(currentVal: Int){
-//        let label = UILabel(frame: .zero)
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        label.textColor = UIColor.black
-//        label.text = "Rolled: \(currentVal)"
-//        historyView.addSubview(label)
-//        print("\(currentVal) added to history")
-//    }
-    
     func firstRollChange(){
         firstRoll = false
         rerollButton.setTitle("Reroll", for: .normal)
-//        floatingArrow.isHidden = true
+    }
+    
+    func shakeView(view:UIView){
+        let x_shake = Int.random(in: Int.random(in: -3 ..< 0)..<Int.random(in: 0..<3))
+        let y_shake = Int.random(in: 10..<15)
+        shake.isAdditive = true
+        shake.fromValue = NSValue(cgPoint: CGPoint.zero)
+        shake.toValue = NSValue(cgPoint: CGPoint(x: x_shake, y: y_shake))
+        shake.autoreverses = true
+        shake.duration = 0.1
+        shake.repeatCount = 2
+        RollOutputView.layer.add(shake, forKey: "shakeAnimation")
+        softHaptic.impactOccurred()
     }
 }
 

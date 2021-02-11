@@ -96,6 +96,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="RollOutputView" destination="ewd-eb-fBr" id="F5C-dw-FOs"/>
                         <outlet property="floatingArrow" destination="SS9-hP-ZFg" id="mre-hf-ajR"/>
                         <outlet property="maxNumberLabel" destination="ZfZ-n7-0Nz" id="Jrl-Qf-SmR"/>
                         <outlet property="outputNumberLabel" destination="VaH-Qh-z24" id="Jjp-aK-o8U"/>
