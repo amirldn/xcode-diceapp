@@ -23,18 +23,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaH-Qh-z24">
-                                <rect key="frame" x="185" y="373" width="44" height="76.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roll!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaH-Qh-z24">
+                                <rect key="frame" x="138.5" y="373" width="137" height="77"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="64"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCo-bo-gY7">
-                                <rect key="frame" x="183" y="471.5" width="48" height="35"/>
+                                <rect key="frame" x="183" y="472" width="48" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Reroll"/>
                                 <connections>
-                                    <action selector="onReroll" destination="BYZ-38-t0r" eventType="touchDown" id="yMC-C3-ypx"/>
+                                    <action selector="onReroll" destination="BYZ-38-t0r" eventType="touchDown" id="WmV-69-6uN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max Number: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wc2-SJ-xQe">
@@ -76,7 +76,9 @@
                     <connections>
                         <outlet property="maxNumberLabel" destination="ZfZ-n7-0Nz" id="Jrl-Qf-SmR"/>
                         <outlet property="outputNumberLabel" destination="VaH-Qh-z24" id="Jjp-aK-o8U"/>
+                        <outlet property="rerollButton" destination="lCo-bo-gY7" id="g4Z-pC-sKg"/>
                         <outlet property="stepper" destination="ASr-RO-vzT" id="Bla-N9-iH2"/>
+                        <outlet property="userTitle" destination="X6J-nX-kRk" id="AWS-pW-GcN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

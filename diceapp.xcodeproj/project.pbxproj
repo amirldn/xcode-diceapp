@@ -15,6 +15,7 @@
 		E95456AE25D54FD600ED28BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E95456AC25D54FD600ED28BB /* LaunchScreen.storyboard */; };
 		E95456B925D54FD600ED28BB /* diceappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95456B825D54FD600ED28BB /* diceappTests.swift */; };
 		E95456C425D54FD600ED28BB /* diceappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95456C325D54FD600ED28BB /* diceappUITests.swift */; };
+		E95456E125D570DC00ED28BB /* Payload in Resources */ = {isa = PBXBuildFile; fileRef = E95456E025D570DC00ED28BB /* Payload */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		E95456BF25D54FD600ED28BB /* diceappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = diceappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95456C325D54FD600ED28BB /* diceappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diceappUITests.swift; sourceTree = "<group>"; };
 		E95456C525D54FD600ED28BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E95456E025D570DC00ED28BB /* Payload */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Payload; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				E95456AA25D54FD600ED28BB /* Assets.xcassets */,
 				E95456AC25D54FD600ED28BB /* LaunchScreen.storyboard */,
 				E95456AF25D54FD600ED28BB /* Info.plist */,
+				E95456E025D570DC00ED28BB /* Payload */,
 			);
 			path = diceapp;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E95456AE25D54FD600ED28BB /* LaunchScreen.storyboard in Resources */,
+				E95456E125D570DC00ED28BB /* Payload in Resources */,
 				E95456AB25D54FD600ED28BB /* Assets.xcassets in Resources */,
 				E95456A925D54FD300ED28BB /* Main.storyboard in Resources */,
 			);
@@ -348,8 +352,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = GVH7M8264K;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -366,7 +373,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -409,8 +416,11 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = GVH7M8264K;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -421,7 +431,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -447,7 +457,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = amirm.diceapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -467,7 +477,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = amirm.diceapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
